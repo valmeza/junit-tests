@@ -14,6 +14,9 @@ public class StudentTest {
     public void setUp() {
         valeria = new Student(1L, "Valeria");
         gina = new Student(2L, "Gina");
+        gina.addGrade(85);
+        gina.addGrade(45);
+        valeria.addGrade(90);
     }
 
     @Test
@@ -24,16 +27,12 @@ public class StudentTest {
 
     @Test
     public void addGradeTest() {
-        valeria.addGrade(90);
         assertSame(90, valeria.getGrades().get(0));
     }
 
     @Test
     public void gradeAverageTest() {
-        gina.addGrade(85);
-        gina.addGrade(45);
-        valeria.addGrade(90);
-        assertEquals(90, valeria.getGradeAverage(), 0);
-        assertEquals(65, gina.getGradeAverage(), 0);
+        assertEquals(90, valeria.getGradeAverage(), 0.1);
+        assertEquals(65, gina.getGradeAverage(), 0.1);
     }
 }
