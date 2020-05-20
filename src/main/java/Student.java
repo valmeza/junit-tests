@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
 public class Student {
-    long id;
-    String name;
-    ArrayList<Integer> grades;
+    public long id;
+    public String name;
+    public ArrayList<Integer> grades;
 
     public Student(long id, String name) {
         this.name = name;

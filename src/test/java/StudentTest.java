@@ -25,7 +25,11 @@ public class StudentTest {
     @Test
     public void gradeAverageTest() {
         Student valeria = new Student(1, "Valeria");
+        Student gina = new Student(2, "Gina");
+        gina.addGrade(85);
+        gina.addGrade(45);
         valeria.addGrade(90);
         assertEquals(90, valeria.getGradeAverage(), 0);
+        assertEquals(65, gina.getGradeAverage(), 0);
     }
 }
